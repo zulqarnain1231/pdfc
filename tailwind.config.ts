@@ -19,8 +19,12 @@ const config: Config = {
         white: {
           main: "#fff",
           off: "#EAEAEA",
+          secondary: "#BFBFBF",
         },
         success: "#1F8D51",
+      },
+      boxShadow: {
+        uploadPdf: "0px 4px 38px 0px rgba(36, 36, 37, 0.06)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
