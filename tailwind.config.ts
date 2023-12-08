@@ -21,6 +21,9 @@ const config: Config = {
           off: "#EAEAEA",
           secondary: "#BFBFBF",
         },
+        gray: {
+          main: "#DEDFE1",
+        },
         success: "#1F8D51",
       },
       boxShadow: {

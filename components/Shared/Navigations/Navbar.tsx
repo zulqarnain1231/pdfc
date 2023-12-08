@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
   return (
     <>
-      <ComponentWrapper style="w-full h-[90px] bg-transparent">
+      <ComponentWrapper style="w-full h-[90px] bg-transparent z-50">
         <nav className="w-full h-full flex items-center justify-between">
           <Link
             href={"/"}
@@ -49,12 +49,12 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={item.route}
-                className="text-brand-main text-lg font-medium relative after:absolute after:h-[2px] after:w-0 after:bg-brand-main after:bottom-0 after:left-0 hover:after:w-full hover:after:duration-300"
+                className="text-brand-main text-lg z-10 font-medium relative after:absolute after:h-[2px] after:w-0 after:bg-brand-main after:bottom-0 after:left-0 hover:after:w-full hover:after:duration-300"
               >
                 {item.name}
               </Link>
             ))}
-            <button className="h-[50px] w-[140px] flex items-center justify-center rounded-[7px] hover:scale-105 hover:duration-200 text-white-main text-lg font-semibold bg-brand-main">
+            <button className="h-[50px] w-[140px] z-10 flex items-center justify-center rounded-[7px] hover:scale-105 hover:duration-200 text-white-main text-lg font-semibold bg-brand-main">
               Join Now
             </button>
           </div>
