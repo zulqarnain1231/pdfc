@@ -1,4 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* faq accordion styles */
+.Mui-expanded .MuiAccordion-region {
+  background-color: #fff !important;
+  transition: ease-in 0.2s !important;
+  border-radius: 4px !important;
+}
+.MuiAccordion-root .Mui-expanded {
+  background-color: #fff !important;
+  transition: ease-in 0.2s !important;
+  border-radius: 4px !important;
+}
+.MuiAccordion-gutters {
+  margin: 1rem 0 !important;
+}
+.MuiAccordion-root::before {
+  display: none !important;
+}
+
+.MuiAccordion-root {
+  background-color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  /* padding: 8px !important; */
+}

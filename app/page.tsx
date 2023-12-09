@@ -1,10 +1,10 @@
+import Image from "next/image";
 import Features from "@/components/Home/Features/Features";
 import Hero from "@/components/Home/Hero/Hero";
 import Pricing from "@/components/Home/Pricing/Pricing";
 import UseCase from "@/components/Home/UseCase";
 import Navbar from "@/components/Shared/Navigations/Navbar";
-import Image from "next/image";
-
+import Faq from "@/components/Home/Faq";
 export default function Home() {
   return (
     <main className="w-full h-full">
@@ -26,6 +26,7 @@ export default function Home() {
       <UseCase />
       <div className="w-full py-16 bg-white-main"></div>
       <Pricing />
+      <Faq />
     </main>
   );
 }
