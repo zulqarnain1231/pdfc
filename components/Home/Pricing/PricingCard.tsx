@@ -58,11 +58,11 @@ const PricingCard: React.FC<Props> = ({
           </div>
         ))}
         <button
-          className={`w-full h-[80px] flex items-center justify-center ${
+          className={`w-full sm:h-[80px] h-[70px] flex items-center justify-center ${
             buttonDark
               ? "bg-brand-main text-white-main"
               : "bg-white-off text-brand-main"
-          } text-base sm:text-lg font-semibold rounded-[10px]`}
+          } text-base sm:text-lg font-semibold rounded-[10px] hover:scale-105 hover:duration-200`}
         >
           Get Started
         </button>

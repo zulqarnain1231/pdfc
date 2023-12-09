@@ -60,7 +60,7 @@ const Navbar = () => {
           </div>
           <button
             onClick={toggleDrawer}
-            className="min-[840px]:hidden flex items-center justify-center text-brand-main text-3xl"
+            className="min-[840px]:hidden flex items-center z-50 justify-center text-brand-main text-3xl"
           >
             <CgMenuRight />
           </button>
