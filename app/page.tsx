@@ -1,5 +1,6 @@
 import Features from "@/components/Home/Features/Features";
 import Hero from "@/components/Home/Hero/Hero";
+import Pricing from "@/components/Home/Pricing/Pricing";
 import UseCase from "@/components/Home/UseCase";
 import Navbar from "@/components/Shared/Navigations/Navbar";
 import Image from "next/image";
@@ -23,6 +24,8 @@ export default function Home() {
       </div>
       <Features />
       <UseCase />
+      <div className="w-full py-16 bg-white-main"></div>
+      <Pricing />
     </main>
   );
 }
