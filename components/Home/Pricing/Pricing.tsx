@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa6";
 import PricingCard from "./PricingCard";
 const Pricing = () => {
   return (
-    <section id="pricing w-full">
+    <section id="pricing" className="w-full">
       <ComponentWrapper style="bg-brand-main lg:pt-20 lg:pb-32 py-12">
         <div className="w-full flex flex-col items-center justify-start gap-10">
           <h2 className="text-white-main sm:text-5xl text-center text-4xl font-semibold capitalize">

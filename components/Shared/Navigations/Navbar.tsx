@@ -1,37 +1,80 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ComponentWrapper from "../Wrappers/ComponentWrapper";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { CgMenuRight } from "react-icons/cg";
 import { MdCancel } from "react-icons/md";
 import Drawer from "@mui/material/Drawer";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const path = usePathname();
+  // Function to handle the scroll event
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // function fpr smooth scrolling
+
+    let navLinks = document.querySelectorAll("nav a");
+    function smoothScroll(this: any, event: any) {
+      event.preventDefault();
+
+      const href = this.getAttribute("href");
+
+      document.querySelector(href).scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    if (path == "/") {
+      for (const link of navLinks) {
+        link.addEventListener("click", smoothScroll);
+      }
+    }
+  }, [path]);
   const toggleDrawer = () =>
     setIsDrawerOpen((prevvalue: boolean) => !prevvalue);
   const menu = [
     {
       name: "Features",
-      route: "/",
+      route: `${path == "/" ? "#features" : "/"}`,
     },
     {
       name: "Case",
-      route: "/",
+      route: `${path == "/" ? "#useCase" : "/"}`,
     },
     {
       name: "Pricing",
-      route: "/",
+      route: `${path == "/" ? "#pricing" : "/"}`,
     },
     {
       name: "Extension",
-      route: "/",
+      route: `${path == "/" ? "#faq" : "/"}`,
     },
   ];
   return (
     <>
-      <ComponentWrapper style="w-full h-[90px] bg-transparent z-50">
+      <ComponentWrapper
+        style={`z-50 ${
+          isScrolled ? "bg-white-main" : "bg-transparent"
+        } fixed h-[90px] w-full duration-300`}
+      >
         <nav className="w-full h-full flex items-center justify-between">
           <Link
             href={"/"}

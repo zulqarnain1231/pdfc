@@ -1,25 +1,28 @@
+"use client";
 import React from "react";
 import ComponentWrapper from "../Wrappers/ComponentWrapper";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
   const year = new Date().getFullYear();
+  const path = usePathname();
   const menu = [
     {
       name: "Features",
-      route: "/",
+      route: `${path == "/" ? "#features" : "/"}`,
     },
     {
       name: "Case",
-      route: "/",
+      route: `${path == "/" ? "#useCase" : "/"}`,
     },
     {
       name: "Pricing",
-      route: "/",
+      route: `${path == "/" ? "#pricing" : "/"}`,
     },
     {
       name: "Extension",
-      route: "/",
+      route: `${path == "/" ? "#faq" : "/"}`,
     },
   ];
   return (

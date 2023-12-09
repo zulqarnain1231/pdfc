@@ -4,7 +4,7 @@ import React from "react";
 const Hero = () => {
   return (
     <ComponentWrapper style="lg:h-[calc(100dvh-90px)] w-full z-10">
-      <div className="w-full h-full grid lg:grid-cols-2 lg:py-0 py-10 gap-8">
+      <div className="w-full h-full grid lg:grid-cols-2 lg:pt-28 pt-10 gap-8">
         <aside className="w-full h-full flex flex-col items-center lg:items-start justify-center gap-10">
           <h1 className="text-brand-main md:text-[80px] md:leading-[92px] text-5xl font-extrabold z-10">
             Chat with any PDF Document
