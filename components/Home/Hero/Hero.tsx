@@ -26,14 +26,14 @@ const Hero = () => {
                   or click to browse
                 </p>
               </div>
-              <div className="sm:w-[350px] w-full sm:h-[55px] h-auto py-2 px-4 flex sm:flex-row flex-col items-center justify-between border border-[#E2E8F0] rounded-lg">
+              <div className="sm:w-[350px] w-full sm:h-[55px] h-auto py-2 px-4 flex sm:flex-row flex-col items-center justify-between gap-3 sm:gap-0 border border-[#E2E8F0] rounded-lg">
                 <input
                   type="text"
                   placeholder="htttps://example.com/abcdef"
                   className="sm:w-[calc(100%-64px)] z-10 w-full h-full focus:outline-none border-none text-sm text-black-off placeholder:text-black-off font-medium"
                   autoComplete="off"
                 />
-                <button className="h-[41px] w-[64px] z-10 flex items-center justify-center text-white-main font-semibold text-base bg-brand-main rounded-md">
+                <button className="sm:h-[41px] h-[32px] w-[64px] flex-shrink-0 z-10 flex items-center justify-center text-white-main font-semibold text-base bg-brand-main rounded-md">
                   Go
                 </button>
               </div>

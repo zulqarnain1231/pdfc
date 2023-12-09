@@ -25,6 +25,7 @@ const config: Config = {
           main: "#DEDFE1",
         },
         success: "#1F8D51",
+        warning: "#FFB545",
       },
       boxShadow: {
         uploadPdf: "0px 4px 38px 0px rgba(36, 36, 37, 0.06)",
