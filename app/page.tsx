@@ -1,5 +1,6 @@
 import Features from "@/components/Home/Features/Features";
 import Hero from "@/components/Home/Hero/Hero";
+import UseCase from "@/components/Home/UseCase";
 import Navbar from "@/components/Shared/Navigations/Navbar";
 import Image from "next/image";
 
@@ -21,6 +22,7 @@ export default function Home() {
         </div>
       </div>
       <Features />
+      <UseCase />
     </main>
   );
 }
