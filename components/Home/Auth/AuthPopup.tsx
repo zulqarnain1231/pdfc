@@ -38,7 +38,7 @@ const AuthPopup: React.FC<Props> = ({ isLoginOpen, toggleIsLoginOpen }) => {
         onSubmit={handleSubmit}
         className="w-full h-full flex flex-col items-center justify-start gap-7 p-3"
       >
-        <h2 className="text-brand-main text-4xl sm:text-5xl font-medium">
+        <h2 className="text-brand-main text-4xl sm:text-5xl font-semibold">
           {isLoginForm ? "Login" : "Sign up"}
         </h2>
         <button

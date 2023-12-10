@@ -26,6 +26,8 @@ const config: Config = {
         },
         success: "#1F8D51",
         warning: "#FFB545",
+        purple: "#4A25E1 ",
+        blueish: "#7B5AFF",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
