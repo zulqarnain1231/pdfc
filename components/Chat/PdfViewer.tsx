@@ -27,11 +27,11 @@ const PdfViewer = () => {
   }) => {
     setNumPages(nextNumPages);
   };
-  //   const onPageLoadSuccess = () => {
-  //     setPageWidth(window.innerWidth);
-  //     console.log(file);
-  //     setLoading(false);
-  //   };
+  const onPageLoadSuccess = () => {
+    setPageWidth(window.innerWidth - 700);
+    console.log(file);
+    setLoading(false);
+  };
 
   //   useEffect(() => {
   //     setLoading(true); // Set loading to true when the file changes
@@ -43,12 +43,41 @@ const PdfViewer = () => {
   const goToPreviousPage = () => {
     setPageNumber((prevPageNumber) => prevPageNumber - 1);
   };
+  const handlePrint = () => {
+    const printWindow = window.open("", "_blank");
+
+    if (printWindow) {
+      printWindow.document.write(`
+      <html>
+        <head>
+          <title>Print</title>
+          <style>
+            body { margin: 0; }
+            @media print {
+              body { margin: 0.5cm; }
+              iframe { width: 100%; height: 100vh; }
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src="${file?.name}" width="100%" height="100%" type="application/pdf"></iframe>
+        </body>
+      </html>
+    `);
+
+      printWindow.document.close();
+      printWindow.print();
+    } else {
+      alert("Popup blocked. Please allow popups for this site to print.");
+    }
+  };
 
   const options = {
     cMapUrl: "cmaps/",
     cMapPacked: true,
     standardFontDataUrl: "standard_fonts/",
   };
+  console.log(file);
   return (
     <div className="w-full md:h-[700px] h-[550px] bg-white-main shadow-uploadPdf">
       {/* toolbar */}
@@ -90,7 +119,10 @@ const PdfViewer = () => {
         {/* options */}
         <div className="h-full flex items-center justify-center gap-4">
           <SlCursorMove className="text-xl text-brand-main" />
-          <TfiPrinter className="text-xl text-brand-main" />
+          <button onClick={() => {}}>
+            <TfiPrinter className="text-xl text-brand-main" />
+          </button>
+
           <PiDotsThreeOutlineVerticalLight className="text-xl text-brand-main" />
         </div>
       </div>
@@ -100,18 +132,30 @@ const PdfViewer = () => {
           file={file}
           onLoadSuccess={onDocumentLoadSuccess}
           //   options={options}
-          //   renderMode="canvas"
+          renderMode="canvas"
           //   className=""
         >
           <Page
-            className=""
+            className="sm:hidden flex"
             key={pageNumber}
             pageNumber={pageNumber}
             renderAnnotationLayer={false}
             renderTextLayer={false}
-            // onLoadSuccess={onPageLoadSuccess}
+            onLoadSuccess={onPageLoadSuccess}
             // onRenderError={() => setLoading(false)}
-            // width={Math.max(pageWidth * 0.8, 390)}
+            width={Math.max(pageWidth * 0.1, 300)}
+            // renderAnnotationLayer={false}
+            // renderTextLayer={false}
+          />
+          <Page
+            className="sm:flex hidden"
+            key={pageNumber}
+            pageNumber={pageNumber}
+            renderAnnotationLayer={false}
+            renderTextLayer={false}
+            onLoadSuccess={onPageLoadSuccess}
+            // onRenderError={() => setLoading(false)}
+            width={Math.max(pageWidth * 0.8, 390)}
             // renderAnnotationLayer={false}
             // renderTextLayer={false}
           />
