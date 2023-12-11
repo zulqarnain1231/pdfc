@@ -4,20 +4,13 @@ import ComponentWrapper from "../Shared/Wrappers/ComponentWrapper";
 import { IoPersonSharp } from "react-icons/io5";
 import { RiSparklingFill } from "react-icons/ri";
 import { BsFillSendFill } from "react-icons/bs";
-import { PiDotsThreeOutlineVerticalLight } from "react-icons/pi";
-import {
-  GoChevronUp,
-  GoChevronDown,
-  GoZoomIn,
-  GoZoomOut,
-} from "react-icons/go";
-import { SlCursorMove } from "react-icons/sl";
-import { TfiPrinter } from "react-icons/tfi";
+import PdfViewer from "./PdfViewer";
+
 const Chat = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>
     e.preventDefault();
   return (
-    <ComponentWrapper style="lg:py-28 py-20 ">
+    <ComponentWrapper style="lg:py-28 py-[90px] ">
       <div className="w-full h-full flex flex-col items-center justify-start gap-12">
         <h2 className="text-brand-main text-4xl text-center sm:text-5xl font-semibold">
           Chat with employee training documents
@@ -28,39 +21,7 @@ const Chat = () => {
           as chatting with a friend.
         </p>
         <div className="w-full grid lg:grid-cols-2 gap-8">
-          {/* pdf viewr */}
-          <div className="w-full md:h-[700px] h-[550px] bg-white-main shadow-uploadPdf">
-            {/* toolbar */}
-            <div className="w-full h-[54px] flex items-center justify-between border border-white-off px-3 ">
-              {/* pages */}
-              <div className="h-full flex items-center justify-start gap-4">
-                <GoChevronUp className="text-2xl text-white-secondary" />
-                <span className="flex items-center justify-center gap-1 text-base text-brand-main font-normal">
-                  {" "}
-                  <span className="h-[37px] w-[46px] flex items-center justify-center border border-white-off rounded-md">
-                    1
-                  </span>{" "}
-                  <p className="text-base text-brand-main font-normal">/3</p>
-                </span>
-
-                <GoChevronDown className="text-2xl text-brand-main" />
-              </div>
-              {/* zoom */}
-              <div className="h-full sm:flex hidden items-center justify-center gap-4">
-                <GoZoomOut className="text-xl text-brand-main" />
-                <p className="text-base text-brand-main font-normal">75%</p>
-                <GoZoomIn className="text-xl text-brand-main" />
-              </div>
-              {/* options */}
-              <div className="h-full flex items-center justify-center gap-4">
-                <SlCursorMove className="text-xl text-brand-main" />
-                <TfiPrinter className="text-xl text-brand-main" />
-                <PiDotsThreeOutlineVerticalLight className="text-xl text-brand-main" />
-              </div>
-            </div>
-            {/* pdf here */}
-            <div className="w-full h-[calc(100%-54px)] overflow-auto thinScroll px-4 pt-2"></div>
-          </div>
+          <PdfViewer />
           {/* chat side */}
           <div className="w-full md:h-[700px] h-[550px] lg:h-full flex flex-col items-center justify-between bg-white-main shadow-uploadPdf px-4 py-6">
             <div className="w-full flex flex-col items-center justify-start gap-10">

@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useState } from "react";
 
 export const fileContext = createContext<null | any>(null);

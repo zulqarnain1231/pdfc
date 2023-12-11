@@ -1,5 +1,6 @@
 import ComponentWrapper from "@/components/Shared/Wrappers/ComponentWrapper";
 import React from "react";
+import PdfUpload from "./PdfUpload";
 
 const Hero = () => {
   return (
@@ -15,31 +16,7 @@ const Hero = () => {
             information, and more.
           </p>
         </aside>
-        <aside className="w-full h-full flex flex-col items-center justify-center">
-          <div className="sm:h-[450px] h-[300px] w-full bg-white-main z-10 rounded-2xl shadow-uploadPdf border-[6px] border-white-off sm:p-10 p-5">
-            <div className="w-full h-full flex flex-col items-center justify-center gap-8 border-[3px] border-black-secondary border-dashed rounded-[10px] px-2">
-              <div className="w-full flex flex-col items-center justify-center gap-2">
-                <p className="text-balck-off text-xl font-bold z-10">
-                  Please Drop PDF{" "}
-                </p>
-                <p className="text-black-off text-xl font-normal z-10">
-                  or click to browse
-                </p>
-              </div>
-              <div className="sm:w-[350px] w-full sm:h-[55px] h-auto py-2 px-4 flex sm:flex-row flex-col items-center justify-between gap-3 sm:gap-0 border border-[#E2E8F0] rounded-lg">
-                <input
-                  type="text"
-                  placeholder="htttps://example.com/abcdef"
-                  className="sm:w-[calc(100%-64px)] z-10 w-full h-full focus:outline-none border-none text-sm text-black-off placeholder:text-black-off font-medium"
-                  autoComplete="off"
-                />
-                <button className="sm:h-[41px] h-[32px] w-[64px] flex-shrink-0 z-10 flex items-center justify-center text-white-main font-semibold text-base bg-brand-main rounded-md">
-                  Go
-                </button>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <PdfUpload />
       </div>
     </ComponentWrapper>
   );
